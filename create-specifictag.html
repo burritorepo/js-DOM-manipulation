@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <div class="row  mt-4">
+                <div class="col">
+                    <label for="inputState">Element</label>
+                    <select id="element" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>p</option>
+                        <option>div</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="inputState">Add text</label>
+                    <input type="text" class="addtext form-control" placeholder="Text within" />
+                </div>
+            </div>
+            <div class="row  mt-4">
+                <div class="col">
+                    <label for="inputState">Choose class</label>
+                    <input type="text" class="addclass form-control" placeholder="Class" />
+                </div>
+                <div class="col">
+                    <label for="inputState">Element color</label>
+                    <input type="text" class="addcolor form-control" placeholder="Color" />
+                </div>
+            </div>
+            <div class="row  mt-4">
+                <div class="col">
+                    <label for="inputState">Font size</label>
+                    <select id="font-size" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="inputState">Inside this element...</label>
+                    <select id="inside" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>body</option>
+                        <option>div</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="row justify-content-md-center mt-4"><button class="btn btn-primary" type="submit">Create</button>
+        </div>
+    </form>
+    <script src="./main.js"></script>
+</body>
+
+</html>
