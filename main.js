@@ -1,27 +1,35 @@
-const list = document.querySelectorAll("input[type=text]");
-const chose = document.querySelectorAll("select");
-const button = document.querySelector(".btn");
+/* Función para crear objeto "element" que contiene valores del formulario */
+function getValues() {
+  let element = {
+    create: document.querySelector('.js-addelement').value,
+    text: document.querySelector('.js-addtext').value,
+    color: document.querySelector('.js-addcolor').value,
+    class: document.querySelector('.js-addclass').value,
+    fontsize: document.querySelector('.js-font').value,
+    container: document.querySelector(`${document.querySelector('.js-element').value}`)
+  };
+  return element;
+}
 
-button.addEventListener("click", function (e) {
+function createElement(x) {
+  let newElement = document.createElement(x.create);
+  console.log('nuevo', newElement);
+  return newElement;
+}
+
+function insert(elementValues, newElement) {
+  let container = elementValues.container;
+  container.appendChild(newElement);
+  console.log('container', container);
+}
+
+
+let button = document.querySelector('button');
+
+button.addEventListener('click', function (e) {
+  console.log('click');
   e.preventDefault();
-  chose.forEach(function (option) {
-    let newelement = '';
-    console.log(option.id);
-    if (option.id === "element") {
-      if (option.value === "p") {
-        newelement = document.createElement(option.value);
-        document.body.appendChild(newelement);
-      }
-    }
-
-    console.log('newElement', newElement)
-    newelement.textContent = document.querySelector('.addtext').value;
-    newelement.style.backgroundColor = document.querySelector('.addcolor').value;
-    newelement.classList.add(document.querySelector('.addclass').value);
-  });
+  let formvalues = getValues();
+  let newelement = createElement(formvalues);
+  insert(formvalues, newelement);
 })
-
-
-
-
-
